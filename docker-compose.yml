@@ -1,0 +1,26 @@
+version: '3'
+services:
+
+  postgres:
+    image: "postgres:latest"
+    container_name: postgres
+    ports:
+      - 5433:5432
+    env_file:
+      - .env
+
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - 3000:3000
+    links:
+      - postgres
+
+  react:
+    build: ./client_src
+    container_name: react
+    ports:
+      - 3001:3000
+    links:
+      - backend
