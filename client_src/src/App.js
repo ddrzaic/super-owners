@@ -4,8 +4,10 @@ import React from 'react';
 import Main from './components/Main';
 import Navbar from './components/Navbar';
 import './App.css';
+import { useHistory } from 'react-router-dom';
 
 function App() {
+  const history = useHistory();
   const [currentUser, setCurrentUser] = React.useState('');
   React.useEffect(() => {
     document.addEventListener("userChanged", () => {
@@ -19,7 +21,7 @@ function App() {
 
   return (
     <div>
-      <Navbar userEmail={currentUser} />
+      <Navbar userEmail={currentUser} history = {history} />
       <div className="container">
         <Main></Main>
       </div>

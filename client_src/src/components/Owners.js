@@ -45,7 +45,7 @@ class Owners extends Component {
                 );
             }).catch(err => {
                 if (err.response.status === 401) {
-                    this.props.history.push("/");
+                   this.props.history.replace("/", null);
                 }
                 console.log(err);
             });
@@ -58,7 +58,7 @@ class Owners extends Component {
                 })
             }).catch(err => {
                 if (err.response.status === 401) {
-                    this.props.history.push("/");
+                    this.props.history.replace("/", null);
                 }
 
                 console.log(err);

@@ -4,6 +4,8 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Redirect } from "react-router-dom";
 
+
+
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -44,7 +46,7 @@ class Home extends Component {
             localStorage.setItem('user_email', loginUser.email);
             const event = new Event('userChanged');
             document.dispatchEvent(event);
-            this.props.history.push('/owners');
+            this.props.history.replace('/owners', null);
 
         }).catch(err => {
             console.log(err);
