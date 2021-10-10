@@ -11,6 +11,10 @@
   margin-left: 2%;
 }
 
+#logout-link:hover{
+  background-color: grey;
+}
+
 #dropdown1 {
 
   margin: 0;
@@ -24,9 +28,13 @@
   position: absolute;
   white-space: nowrap;
   color: black;
-  padding-left: 2%;
+  
   z-index: 1;
   will-change: width, height;
+}
+
+#dropdown1 p {
+  text-align: center;
 }
 
 #dropdown2 {
