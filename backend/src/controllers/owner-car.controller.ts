@@ -21,6 +21,8 @@ Ownercar,
 Car,
 } from '../models';
 import {OwnerRepository} from '../repositories';
+import {authenticate} from '@loopback/authentication';
+@authenticate('jwt')
 
 export class OwnerCarController {
   constructor(

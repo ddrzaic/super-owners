@@ -20,7 +20,9 @@ import {
   Owner
 } from '../models';
 import {CountryRepository} from '../repositories';
+import {authenticate} from '@loopback/authentication';
 
+@authenticate('jwt')
 export class CountryOwnerController {
   constructor(
     @repository(CountryRepository) protected countryRepository: CountryRepository,

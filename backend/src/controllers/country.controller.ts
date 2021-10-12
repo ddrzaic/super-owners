@@ -13,6 +13,8 @@ import {
 } from '@loopback/rest';
 import {Country} from '../models';
 import {CountryRepository} from '../repositories';
+import {authenticate} from '@loopback/authentication';
+@authenticate('jwt')
 
 export class CountryController {
   constructor(
